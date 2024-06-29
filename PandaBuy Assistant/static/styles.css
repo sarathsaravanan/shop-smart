@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: rgb(166, 60, 164); 
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: width 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 0px 10px;
+    text-decoration: none;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    display: block;
+    transition: color 0.3s;
+}
+
+
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+}
+
+#main {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(166, 60, 164);
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 20px;
+    
+}
+.bubble {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(0, blue, red);
+    border-radius: 300px;
+    position: fixed;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+.topLeft {
+    translate: -50% -50%;
+    animation: morph1 20s infinite;
+}
+
+.bottomRight {
+    translate: 230% 100%;
+    animation: morph2 20s infinite;
+}
+
+
+
+header h1 {
+    font-family: "Roboto Slab", serif;
+    flex-grow: 0;
+    margin: 0;
+    padding: 0px 400px;
+    font-size: 49px;
+    transition: font-size 0.3s;
+    color: rgb(255, 255, 255)
+    
+    ;
+    
+}
+
+
+
+.burger {
+    width: 30px;
+    height: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.burger:before,
+.burger:after {
+    content: '';
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s;
+}
+
+.burger:before {
+    top: -8px;
+}
+
+.burger:after {
+    bottom: -8px;
+}
+
+.burger:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    margin: 20px 0;
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    background-color: rgb(166, 60, 164);   
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.content:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#chat-container {
+    padding: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    background-color: rgb(166, 60, 164);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.message:hover {
+    transform: scale(1.02);
+}
+
+.message .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.message:hover .profile-pic {
+    transform: scale(1.1);
+}
+
+.message .message-text {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.input-container {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 40px);
+    display: flex;
+    background-color: rgb(166, 60, 164);
+    padding: 10px 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.input-container:hover {
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    
+}
+
+.input-container input:focus {
+    border-color: #80D0C7;
+    box-shadow: 0 0 10px rgba(0, 147, 233, 0.5);
+}
+
+.input-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.input-container button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.home-button {
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
